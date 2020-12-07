@@ -17,7 +17,7 @@
 
 /**
  * Plugin Name: Caldera Forms CiviCRM Price Field Value
- * Description: A Caldera Forms Processor to lookup the monetary amount of a price field value.
+ * Description: A Caldera Forms Processor for integration with CiviCRM which converts a Price Field value into Magic Tags, including: amount, amount_no_tax, tax, label, financial_type.
  * Version: 1.0.0
  * Author: Agileware
  * Author URI: https://agileware.com.au
