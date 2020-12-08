@@ -106,7 +106,7 @@ function fields () {
 			'required' => true,
 			'magic'    => true,
 			'label'    => __( 'Price Field Value ID', 'cf-civicrm-pfv' ),
-			'desc'     => __( 'Provide an ID for the price field value to lookup.', 'cf-civicrm-pfv' ),
+			'desc'     => __( 'Use a Magic Tag or number to refer to the CiviCRM Price Field Option. This must return a valid ID for a single Option from a CiviCRM Price Field.', 'cf-civicrm-pfv' ),
 		],
 	];
 }
