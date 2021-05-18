@@ -18,7 +18,7 @@
 /**
  * Plugin Name: Caldera Forms CiviCRM Price Field Value
  * Description: A Caldera Forms Processor for integration with CiviCRM which converts a Price Field value into Magic Tags, including: amount, amount_no_tax, tax, label, financial_type.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Agileware
  * Author URI: https://agileware.com.au
  * License: GPL v2 or later
@@ -75,9 +75,9 @@ function pre_processor ( $config, $form ) {
 		}
 
 		// Loop through the stored results and set the magic tags from the output.
-		\Caldera_Forms::set_submission_meta('amount', \CRM_Utils_Money::format($amount + $tax_amount, NULL, NULL, TRUE), $form, $config['processor_id']);
-		\Caldera_Forms::set_submission_meta('amount_no_tax', \CRM_Utils_Money::format($amount, NULL, NULL, TRUE), $form, $config['processor_id']);
-		\Caldera_Forms::set_submission_meta('tax', \CRM_Utils_Money::format($tax_amount, NULL, NULL, TRUE), $form, $config['processor_id']);
+		\Caldera_Forms::set_submission_meta('amount', \sprintf('%.2f', $amount + $tax_amount), $form, $config['processor_id']);
+		\Caldera_Forms::set_submission_meta('amount_no_tax', \sprintf('%.2f', $amount), $form, $config['processor_id']);
+		\Caldera_Forms::set_submission_meta('tax', \sprintf('%.2f', $tax_amount), $form, $config['processor_id']);
 		\Caldera_Forms::set_submission_meta('label', $pfv['label'], $form, $config['processor_id']);
 		\Caldera_Forms::set_submission_meta('financial_type', \CRM_Contribute_PseudoConstant::financialType($pfv['financial_type_id']), $form, $config['processor_id']);
 
